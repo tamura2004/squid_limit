@@ -12,6 +12,7 @@ var port = flag.String("p", "80", "listening port")
 
 func init() {
 	flag.Parse()
+	log.Println("start")
 }
 
 func main() {
