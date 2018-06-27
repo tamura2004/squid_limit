@@ -1,0 +1,48 @@
+version: '3'
+services:
+
+  sq:
+    build: ./squid
+    hostname: sq
+    command:
+      - /usr/local/bin/start-squid.sh
+
+  web1:
+    build: ./badserver
+    hostname: web1
+
+  web2:
+    build: ./badserver
+    hostname: web2
+
+  web3:
+    build: ./badserver
+    hostname: web3
+
+  web4:
+    build: ./badserver
+    hostname: web4
+
+  web5:
+    build: ./badserver
+    hostname: web5
+
+  pc1:
+    build: ./badclient
+    hostname: pc1
+
+  pc2:
+    build: ./badclient
+    hostname: pc2
+
+  pc3:
+    build: ./badclient
+    hostname: pc3
+
+  pc4:
+    build: ./badclient
+    hostname: pc4
+
+  pc5:
+    build: ./badclient
+    hostname: pc5
