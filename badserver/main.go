@@ -3,9 +3,9 @@ package main
 import (
 	"flag"
 	"fmt"
+	"log"
 	"net/http"
 	"time"
-	"log"
 )
 
 var port = flag.String("p", "80", "listening port")

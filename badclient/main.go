@@ -1,12 +1,12 @@
 package main
 
 import (
-	"time"
 	"flag"
 	"fmt"
 	"log"
 	"net"
 	"sync"
+	"time"
 )
 
 var (
@@ -27,7 +27,7 @@ func countDown() {
 	t := time.NewTicker(1 * time.Second)
 	for {
 		select {
-		case <- t.C:
+		case <-t.C:
 			log.Println(count)
 			if count == 0 {
 				t.Stop()
@@ -39,7 +39,7 @@ func countDown() {
 }
 
 func main() {
-	for i:=0;i < *num; i++ {
+	for i := 0; i < *num; i++ {
 		wg.Add(1)
 		go func() {
 			defer wg.Done()
@@ -54,5 +54,7 @@ func main() {
 }
 
 func handleErr(err error) {
-	log.Fatal(err)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
